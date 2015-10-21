@@ -8,7 +8,7 @@ history: |
 
 body: |
 
-  A jq program is a "filter": it takes an input, and produces an
+  A jq program contains "filters", which takes an input, and produces an
   output. There are a lot of builtin filters for extracting a
   particular field of an object, or converting a number to a string,
   or various other standard tasks.
@@ -2176,14 +2176,14 @@ sections:
             input: '("ab,cd", "ef, gh")'
             output: ['"ab"', '"cd"', '"ef"', '"gh"']
 
-      - title: "`sub(regex; tostring)` `sub(regex; string; flags)`"
+      - title: "`sub(regex; str)` `sub(regex; string; flags)`"
         body: |
 
           Emit the string obtained by replacing the first match of regex in the
-          input string with `tostring`, after interpolation.  `tostring` should
+          input string with `str`, after interpolation.  `str` should
           be a jq string, and may contain references to named captures. The
           named captures are, in effect, presented as a JSON object (as
-          constructed by `capture`) to `tostring`, so a reference to a captured
+          constructed by `capture`) to `str`, so a reference to a captured
           variable named "x" would take the form: "\(.x)".
 
         example:
@@ -2192,7 +2192,7 @@ sections:
             output: '"ZabcZabc"'
 
 
-      - title: "`gsub(regex; string)`, `gsub(regex; string; flags)`"
+      - title: "`gsub(regex; str)`, `gsub(regex; str; flags)`"
         body: |
 
           `gsub` is like `sub` but all the non-overlapping occurrences of the regex are

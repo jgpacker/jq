@@ -1848,7 +1848,7 @@ sections:
             input: '[1, 1.0, "1", "banana"]'
             output: ['true', 'true', 'false', 'false']
 
-      - title: if-then-else
+      - title: if-then-else-end
         body: |
 
           `if A then B else C end` will act the same as `B` if `A`
